@@ -10,7 +10,7 @@ class Pebble < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/leberjs/pebble/releases/download/v0.1.0/pbl-darwin-arm64"
-      sha256 "efc53da18373879f083857997d1c3ddd0455a2a221ba2f861e0d1bfe883ce43d"
+      sha256 "8a08858e2f2b97a94b41938a6a93f04b7819227e7295e089a184bc76c64db2ad"
 
       def install
         bin.install "pbl-darwin-arm64" => "pbl"
@@ -18,7 +18,7 @@ class Pebble < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/leberjs/pebble/releases/download/v0.1.0/pbl-darwin-amd64"
-      sha256 "35aa9ab7e3186b82f291357897268231a71d368b6cd4526af3d1d44915d145e1"
+      sha256 "bcc1ab1a8c4f61d394ef01818bee8b24fe3570f40f07430f3fb8c2f75335b059"
 
       def install
         bin.install "pbl-darwin-amd64" => "pbl"
@@ -27,20 +27,20 @@ class Pebble < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/leberjs/pebble/releases/download/v0.1.0/pbl-linux-arm64"
-      sha256 "9e8b135019df8a83510b2a2382d8ae1fcd59eb544d77b24fedb7e078545df803"
-
-      def install
-        bin.install "pbl-linux-arm64" => "pbl"
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/leberjs/pebble/releases/download/v0.1.0/pbl-linux-amd64"
-      sha256 "adf001e17e45c36414b5e87f223061e68b351e5031cb86665f659d082e4a5fea"
+      sha256 "b525194a178acaf3a5cff4f7e0c9b60a62733a7405bba82f562c969be1ad9939"
 
       def install
         bin.install "pbl-linux-amd64" => "pbl"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/leberjs/pebble/releases/download/v0.1.0/pbl-linux-arm64"
+      sha256 "c5082008f93b0f365af9b171ca030c63ca7d373968e4450be161e77c465fb3ce"
+
+      def install
+        bin.install "pbl-linux-arm64" => "pbl"
       end
     end
   end
